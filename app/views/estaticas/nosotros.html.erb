@@ -1,0 +1,38 @@
+<h1>Estaticas#nosotros</h1>
+<p>Find me in app/views/estaticas/nosotros.html.erb</p>
+
+<%= @mensaje %> <br>
+<%= "El controlador dice: #{@mensaje}" %>
+
+<% provide(:titulo, "Nosotros") %>
+
+<ul>
+    <% @usuarios.each do |i| %>
+        <%= "<li> #{i} </li>".html_safe %>
+    <% end %>
+
+</ul>
+
+<%= link_to 'Home', root_path %>
+<%= link_to 'Contacto', estaticas_contacto_path %>
+
+<br>
+
+<%= link_to 'Contacto',
+
+    :controller=>'estaticas',
+     :action=>'contacto',
+     :id=>3,
+     :pagina=>2 %>
+
+<br>
+
+<%= link_to 'Contacto',
+
+    {:controller=>'estaticas',
+    :action=>'contacto',
+    :id=>3,
+    :pagina=>2
+    },
+    :class => 'my_class',
+    :target => '_blank' %>
